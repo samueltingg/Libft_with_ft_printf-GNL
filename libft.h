@@ -6,20 +6,19 @@
 /*   By: sting <sting@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:23:09 by sting             #+#    #+#             */
-/*   Updated: 2024/01/15 16:47:08 by sting            ###   ########.fr       */
+/*   Updated: 2024/01/15 16:49:40 by sting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <limits.h>
-# include <stdlib.h>
-# include <unistd.h>
 # include "ft_printf/ft_printf.h"
 # include "get_next_line/get_next_line.h"
 # include "get_next_line/get_next_line_bonus.h"
-// # include "get_next_line/get_next_line.c"
+# include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
