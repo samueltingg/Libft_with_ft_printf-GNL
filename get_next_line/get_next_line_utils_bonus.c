@@ -6,7 +6,7 @@
 /*   By: sting <sting@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:05:23 by sting             #+#    #+#             */
-/*   Updated: 2024/01/16 10:23:57 by sting            ###   ########.fr       */
+/*   Updated: 2024/01/16 16:31:51 by sting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ int	count_to_nl(t_list *list)
 		lstsize++;
 	}
 	i = 0;
-	while (last_node && ((char *)last_node->content)[i] && ((char *)last_node->content)[i] != '\n')
+	while (last_node && ((char *)last_node->content)[i]
+		&& ((char *)last_node->content)[i] != '\n')
 		i++;
 	return (((lstsize - 1) * BUFFER_SIZE) + i);
 }

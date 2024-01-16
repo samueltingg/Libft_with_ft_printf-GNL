@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sting <sting@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 10:23:09 by sting             #+#    #+#             */
-/*   Updated: 2024/01/16 10:57:18by sting            ###   ########.fr       */
+/*   Created: 2024/01/16 16:22:48 by sting             #+#    #+#             */
+/*   Updated: 2024/01/16 17:09:10 by sting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,13 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-# include "get_next_line/get_next_line.h"
-# include "get_next_line/get_next_line_bonus.h"
+// Get Next Line
+int					count_to_nl(t_list *list);
+char				*get_next_line(int fd);
+void				delete_list(t_list **list);
+
+// # include "get_next_line/get_next_line.h"
+// # include "get_next_line/get_next_line_bonus.h"
 // ^must be below definition of t_list & linked list
 
 #endif
