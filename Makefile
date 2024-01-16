@@ -51,14 +51,15 @@ CFLAGS += -Iget_next_line/
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
-		ar -rc $(NAME) $(OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
+# $(NAME): $(OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
+# 		ar -rc $(NAME) $(OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
 
-bonus: $(OBJS) $(BONUS_OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
-		ar -rc $(NAME) $(OBJS) $(BONUS_OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
+$(NAME): $(OBJS) $(BONUS_OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
+		@ar -rc $(NAME) $(OBJS) $(BONUS_OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
+# ^run bonus all the time
 
 %.o:%.c
-	cc $(CFLAGS) -c $< -o $@
+	@cc $(CFLAGS) -c $< -o $@
 
 RM = rm -f
 

@@ -6,7 +6,7 @@
 /*   By: sting <sting@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:23:09 by sting             #+#    #+#             */
-/*   Updated: 2024/01/15 16:49:40 by sting            ###   ########.fr       */
+/*   Updated: 2024/01/16 10:57:18by sting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define LIBFT_H
 
 # include "ft_printf/ft_printf.h"
-# include "get_next_line/get_next_line.h"
-# include "get_next_line/get_next_line_bonus.h"
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -26,6 +24,9 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+// # include "get_next_line/get_next_line.h"
+// # include "get_next_line/get_next_line_bonus.h"
+//gnl
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t num_elements, size_t element_size);
@@ -72,5 +73,8 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+int		count_to_nl(t_list *list);
+char	*get_next_line(int fd);
+void	delete_list(t_list **list);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sting <sting@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:30:12 by sting             #+#    #+#             */
-/*   Updated: 2023/11/16 14:38:04 by sting            ###   ########.fr       */
+/*   Updated: 2024/01/16 10:20:23 by sting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	find_newline(t_list *list)
 	while (list != NULL)
 	{
 		i = 0;
-		while (list->str[i] != '\0')
+		while (((char *)list->content)[i] != '\0')
 		{
-			if (list->str[i] == '\n')
+			if (((char *)list->content)[i] == '\n')
 				return (1);
 			i++;
 		}
@@ -73,15 +73,15 @@ char	*return_proper_str(t_list *list)
 	while (list != NULL)
 	{
 		j = 0;
-		while ((list)->str[j])
+		while (((char *)list->content)[j])
 		{
-			if ((list)->str[j] == '\n')
+			if (((char *)list->content)[j] == '\n')
 			{
 				proper_str[i] = '\n';
 				proper_str[i + 1] = '\0';
 				return (proper_str);
 			}
-			proper_str[i++] = (list)->str[j++];
+			proper_str[i++] = ((char *)list->content)[j++];
 		}
 		list = list->next;
 	}
@@ -99,17 +99,17 @@ void	store_leftover_str(t_list **list)
 	leftover_node = NULL;
 	last_node = ft_lstlast(*list);
 	i = count_to_nl(last_node);
-	if (!(last_node->str[i] == '\0' || (last_node->str[i] == '\n'
-				&& last_node->str[i + 1] == '\0')))
+	if (!(((char *)last_node->content)[i] == '\0' || (((char *)last_node->content)[i] == '\n'
+				&& ((char *)last_node->content)[i + 1] == '\0')))
 	{
 		leftover_node = (t_list *)malloc(sizeof(t_list));
-		leftover_node->str = (char *)malloc(BUFFER_SIZE + 1);
-		if (!leftover_node || !(leftover_node->str))
+		leftover_node->content = (char *)malloc(BUFFER_SIZE + 1);
+		if (!leftover_node || !(leftover_node->content))
 			return ;
 		j = 0;
-		while (last_node->str[i] != '\0' && last_node->str[++i])
-			leftover_node->str[j++] = last_node->str[i];
-		leftover_node->str[j] = '\0';
+		while (((char *)last_node->content)[i] != '\0' && ((char *)last_node->content)[++i])
+			((char *)leftover_node->content)[j++] = ((char *)last_node->content)[i];
+		((char *)leftover_node->content)[j] = '\0';
 		leftover_node->next = NULL;
 	}
 	delete_list(list);
