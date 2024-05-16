@@ -6,7 +6,7 @@
 /*   By: sting <sting@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:22:48 by sting             #+#    #+#             */
-/*   Updated: 2024/01/16 17:09:10 by sting            ###   ########.fr       */
+/*   Updated: 2024/05/16 15:15:31 by sting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *str);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strcmp(const char *s1, const char *s2);
+int					ft_strcasecmp(const char *s1, const char *s2);
 char				*ft_strnstr(const char *str, const char *to_find,
 						size_t len);
 char				*ft_strrchr(const char *s, int c);
